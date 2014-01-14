@@ -20,9 +20,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <form action="/users" method="POST">
-    <div><%= f.submit "Sign up" %></div>
-  </form>
+  <div><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
