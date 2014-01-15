@@ -9,10 +9,7 @@
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div> 
 
-  <form action="">
-    <input type="radio" name="user_type" value="renter">I am a Renter<br>
-    <input type="radio" name="user_type" value="broker">I am a Broker 
-  </form>
+  <div>Are you a broker?<br/><%= f.check_box :is_a_broker %></div>
 
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>

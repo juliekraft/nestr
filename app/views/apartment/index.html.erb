@@ -1,0 +1,11 @@
+<% @apts.each do |apt| %>
+  <img src="<%= apt.photo %>"/>
+  <p><%= apt.address %> </p>
+  <p>$<%= apt.price %> </p>
+  <p>Bedrooms: <%= apt.bedrooms %> </p>
+  <p>Bathrooms: <%= apt.bathrooms %> </p>
+  <form>
+    <button>Take off the market!</button>
+  </form>
+  <hr/>
+<% end %>
