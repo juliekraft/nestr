@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114212112) do
+ActiveRecord::Schema.define(:version => 20140115191718) do
 
   create_table "apartments", :force => true do |t|
     t.string   "address"
@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(:version => 20140114212112) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.string   "username"
-    t.boolean  "broker"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "is_a_broker",            :default => false

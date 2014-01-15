@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
 
-  # def login
-
-  # end
-
-  # def create
-
-  # end
-
   def index
     # if current_user[:is_a_broker]
     #   redirect_to_root_path
@@ -16,10 +8,14 @@ class UsersController < ApplicationController
     # end
     #THIS IF STATEMENT ISN'T WORKING -- it just goes to root path
     # @is_broker = current_user.find(params[:is_a_broker]) #???
-    if current_user.is_a_broker
+
+    # new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+
+    if current_user == nil
+      redirect_to "/users/sign_up" #IDK
+      #render :""
+    elsif current_user.is_a_broker
       render :"broker/index"
-    elsif current_user == nil
-      redirect_to new_user_registration_path
     else 
       render :"renter/index"
     end
