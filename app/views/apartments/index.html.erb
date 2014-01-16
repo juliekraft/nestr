@@ -1,0 +1,40 @@
+<% @apts.each do |apt| %>
+  <img src="<%= apt.photo %>"/>
+  <p>$<%= apt.price %> </p>
+  <p>Bedrooms: <%= apt.bedrooms %> </p>
+  <p>Bathrooms: <%= apt.bathrooms %> </p>
+  <p>Neighborhood: <%= apt.region %> </p>
+  <p>Street: <%= apt.street %> </p>
+  <p>City: <%= apt.city %> </p>
+  <p>State: <%= apt.state %> </p>
+  <p>Zip: <%= apt.zipcode %> </p>
+  <p>Latitude, Longitude: <%= apt.longitude %>, <%= apt.latitude %> </p>
+
+<!-- Renters can submit an application to put "Application Pending" on  -->
+  <% if current_user && current_user.is_a_broker == false %>
+
+    <form>
+      <button>Submit an Application</button>
+    </form>
+
+  <% end %>
+
+  <% if current_user && current_user.is_a_broker %>
+
+    <form action='/apartments/<%= apt.id %>/edit'>
+      <button>Update Listing</button>
+    </form>
+
+  <% end %> 
+
+  <% if current_user && current_user.is_a_broker %>
+
+    <form>
+      <button>Delete Listing</button>
+    </form>
+
+  <% end %>
+
+  <hr/>
+
+<% end %>

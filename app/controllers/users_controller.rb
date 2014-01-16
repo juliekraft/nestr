@@ -1,24 +1,38 @@
 class UsersController < ApplicationController
 
   def index
-    # if current_user[:is_a_broker]
-    #   redirect_to_root_path
-    # else
-    #   redirect_to '/users/renter_index'
-    # end
-    #THIS IF STATEMENT ISN'T WORKING -- it just goes to root path
-    # @is_broker = current_user.find(params[:is_a_broker]) #???
-
-    # new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
 
     if current_user == nil
-      redirect_to "/users/sign_up" #IDK
-      #render :""
+      redirect_to "/users/sign_up"
     elsif current_user.is_a_broker
       render :"broker/index"
     else 
       render :"renter/index"
     end
+    
   end
 
 end
+
+
+# PARSE YR API USING RILLOW GEM
+# rillow = Rillow.new('X1-ZWz1bb4i44az9n_7oq0o')
+# result = rillow.get_search_results('#{address}','#{city, ST}')
+# result.to_hash 
+# street = result["response"][0]["results"][0]["result"][0]["address"][0]["street"][0]
+# city = result["response"][0]["results"][0]["result"][0]["address"][0]["city"][0]
+# state = result["response"][0]["results"][0]["result"][0]["address"][0]["state"][0]
+# zipcode = result["response"][0]["results"][0]["result"][0]["address"][0]["zipcode"][0]
+# longitude = result["response"][0]["results"][0]["result"][0]["address"][0]["longitude"][0]
+# laitude = result["response"][0]["results"][0]["result"][0]["address"][0]["latitude"][0]
+# region = result["response"][0]["results"][0]["result"][0]["localRealEstate"][0]["region"][0]["name"]
+
+
+
+
+
+
+
+
+
+

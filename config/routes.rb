@@ -6,16 +6,18 @@ Nestr::Application.routes.draw do
 
   get '/broker/index' => "broker#index"
 
-  get '/renter/index' => "renter#index"
+  get '/renter/index' => "renter#index", as: :renter_home
 
-  get "/apartments" => "apartment#index"
+  get "/apartments" => "apartments#index"
+
+  resources :apartments
 
   # get "/users/renter_index" => "users#renter_index"
 
 
 end
 
-# rake routes
+# $ rake routes
 #         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)       devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
@@ -29,12 +31,17 @@ end
 #   edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
 #                          PUT    /users(.:format)               devise/registrations#update
 #                          DELETE /users(.:format)               devise/registrations#destroy
-#                     root        /                              home#index
-#            users_sign_in GET    /users/sign_in(.:format)       devise/sessions#new
-#            users_sign_up GET    /users/sign_up(.:format)       devise/registrations#new
-#                    users POST   /users(.:format)               devise/registrations#create
-#           users_sign_out GET    /users/sign_out(.:format)      devise/sessions#destroy
-
+#                     root        /                              users#index
+#             broker_index GET    /broker/index(.:format)        broker#index
+#              renter_home GET    /renter/index(.:format)        renter#index
+#               apartments GET    /apartments(.:format)          apartments#index
+#                          GET    /apartments(.:format)          apartments#index
+#                          POST   /apartments(.:format)          apartments#create
+#            new_apartment GET    /apartments/new(.:format)      apartments#new
+#           edit_apartment GET    /apartments/:id/edit(.:format) apartments#edit
+#                apartment GET    /apartments/:id(.:format)      apartments#show
+#                          PUT    /apartments/:id(.:format)      apartments#update
+#                          DELETE /apartments/:id(.:format)      apartments#destroy
 
 
 
