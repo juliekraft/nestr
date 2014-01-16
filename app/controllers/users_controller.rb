@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     else 
       render :"renter/index"
     end
-    
+
   end
 
 end
@@ -26,6 +26,10 @@ end
 # longitude = result["response"][0]["results"][0]["result"][0]["address"][0]["longitude"][0]
 # laitude = result["response"][0]["results"][0]["result"][0]["address"][0]["latitude"][0]
 # region = result["response"][0]["results"][0]["result"][0]["localRealEstate"][0]["region"][0]["name"]
+
+#apartment attr_accessors:::::> :address, :bathrooms, :bedrooms, :photo, :price
+#drop address
+#add region, longitude, latitude, street, city, state, zipcode
 
 
 

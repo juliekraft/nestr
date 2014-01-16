@@ -23,9 +23,6 @@ gem 'better_errors'
 
 require 'rubygems'
 require 'rillow'
-# rillow = Rillow.new('your-zillow-key')
-# result = rillow.get_search_results('2114 Bigelow Ave','Seattle, WA')
-# result.to_hash 
 
 
 # Gems used only for assets and not required
