@@ -1,0 +1,51 @@
+/*anything in this file will override bootstrap*/
+
+.btn.btn-primary{
+  background-color: #403D3C;
+  color: white;
+  border: none;
+}
+
+body {
+  background: url(https://24.media.tumblr.com/b53310245ace591b10fea3086340434b/tumblr_mzidsbnCb71qjgntqo1_500h.jpg);
+  font-family: 'Gudea', sans-serif;
+  link: white;   /* "#395E7F"*/
+}
+
+thead {
+  background-color: #403D3C;
+  color: white;
+}
+
+tbody {
+  background-color: white;
+}
+
+h1, h2, p {
+  color: white;
+}
+
+nav {
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.row {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.form-control {
+  width: 200px;
+}

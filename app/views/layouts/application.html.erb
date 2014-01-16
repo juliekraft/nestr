@@ -5,13 +5,18 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Cardo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <nav>
 
   <% if current_user %>
-    Welcome, <%= current_user.email%> | <%= link_to "Logout", destroy_user_session_path, :method => :delete %></a> | <a href="/">Home</a> | <a href="/apartments">View All Apartments</a>
+    Welcome, <%= current_user.name%> | <%= link_to "Logout", destroy_user_session_path, :method => :delete %></a> | <a href="/">Home</a> | <a href="/apartments">View All Apartments</a>
   <% else %>
     <%= link_to "Register", new_user_registration_path%> | <%= link_to "Sign-In", new_user_session_path%> | <a href="/">Home</a>
     <% end %>
@@ -22,12 +27,17 @@
 
 </nav>
 
+<hr/>
+
 
   <!-- Devise suggests this -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  
+<div class="container">
+  <%= yield %>
+</div>
 
-<%= yield %>
 
 </body>
 </html>

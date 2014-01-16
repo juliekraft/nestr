@@ -2,38 +2,38 @@
 
 <%= form_for @new_apt do |f| %>
   <%= f.label :price %>
-  <%= f.number_field :price %> <br/>
+  <%= f.number_field :price, class: "form-control" %> <br/>
 
   <%= f.label :bedrooms %>
-  <%= f.number_field :bedrooms %> <br/>
+  <%= f.number_field :bedrooms, class: "form-control" %> <br/>
 
   <%= f.label :bathrooms %>
-  <%= f.number_field :bathrooms %> <br/>
+  <%= f.number_field :bathrooms, class: "form-control" %> <br/>
 
   <%= f.label :street %>
-  <%= f.text_field :street  %> <br />
+  <%= f.text_field :street, class: "form-control"  %> <br />
 
   <%= f.label :city %>
-  <%= f.text_field :city  %> <br />
+  <%= f.text_field :city, class: "form-control"  %> <br />
 
   <%= f.label :state %>
-  <%= f.text_field :state %><br />
+  <%= f.text_field :state, class: "form-control" %><br />
   
   <%= f.label :zipcode %>
-  <%= f.text_field :zipcode  %><br />
+  <%= f.text_field :zipcode, class: "form-control"  %><br />
 
   <%= f.label :region %>
-  <%= f.text_field :region  %><br />
+  <%= f.text_field :region, class: "form-control"  %><br />
 
   <%= f.label :longitude %>
-  <%= f.text_field :longitude  %><br />
+  <%= f.text_field :longitude, class: "form-control"  %><br />
 
   <%= f.label :latitude %>
-  <%= f.text_field :latitude %><br />
+  <%= f.text_field :latitude, class: "form-control" %><br />
   
   <%= f.label :photo %>
-  <%= f.text_field :photo  %><br />
+  <%= f.text_field :photo, class: "form-control"  %><br />
   
-  <%= f.submit :submit %>
+  <%= f.submit :submit, class: "btn btn-primary" %>
 
 <% end %>

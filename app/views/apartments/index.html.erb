@@ -1,40 +1,42 @@
-<% @apts.each do |apt| %>
-  <img src="<%= apt.photo %>"/>
-  <p>$<%= apt.price %> </p>
-  <p>Bedrooms: <%= apt.bedrooms %> </p>
-  <p>Bathrooms: <%= apt.bathrooms %> </p>
-  <p>Neighborhood: <%= apt.region %> </p>
-  <p>Street: <%= apt.street %> </p>
-  <p>City: <%= apt.city %> </p>
-  <p>State: <%= apt.state %> </p>
-  <p>Zip: <%= apt.zipcode %> </p>
-  <p>Latitude, Longitude: <%= apt.longitude %>, <%= apt.latitude %> </p>
 
-<!-- Renters can submit an application to put "Application Pending" on  -->
-  <% if current_user && current_user.is_a_broker == false %>
+  <% @apts.each do |apt| %>
+  <div class="row">
+   <div class="col-md-6">
+    <td><p><%= apt.price %> </p></td>
+    <td><p>Bedrooms: <%= apt.bedrooms %> </p></td>
+    <td><p>Bathrooms: <%= apt.bathrooms %> </p></td>
+    <td><p><%= apt.region %> </p></td>
+    <td><p><%= apt.street %> </p></td>
+    <td><p><%= apt.city %> </p></td>
+    <td><p><%= apt.state %> </p></td>
+    <td><p><%= apt.zipcode %> </p></td>
+    <td><p><%= apt.longitude %>/<%= apt.latitude %> </p></td>
+  </div>
 
-    <form>
-      <button>Submit an Application</button>
-    </form>
+  <div class="col-md-6">
+    <img src="<%= apt.photo %>" style="width: 200px; height: 200px"/>
 
-  <% end %>
+    <!-- Renters can submit an application to put "Application Pending" on  -->
+    <% if current_user && current_user.is_a_broker == false %>
 
-  <% if current_user && current_user.is_a_broker %>
+      <%= link_to "Submit an Application" %> <br/>
 
-    <form action='/apartments/<%= apt.id %>/edit'>
-      <button>Update Listing</button>
-    </form>
+      <%= link_to "Favorite" %>
 
-  <% end %> 
+    <% end %>
 
-  <% if current_user && current_user.is_a_broker %>
+    <% if current_user && current_user.is_a_broker %> <br/>
 
-    <form>
-      <button>Delete Listing</button>
-    </form>
+      <%= link_to "Update Listing", edit_apartment_path(apt) %> <br/>
 
-  <% end %>
+      <%= link_to "Delete", apartment_path(apt), method: "delete" %>
 
-  <hr/>
+    <% end %>
+  </div>
 
+
+
+</div>
+<hr/>
 <% end %>
+

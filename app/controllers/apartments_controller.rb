@@ -20,7 +20,6 @@ class ApartmentsController < ApplicationController
   end
 
   def edit
-    # id = params[:id]
     if current_user && current_user.is_a_broker
       #feed the apt id into the view yadig
       @apt = Apartment.find(params[:id])
@@ -29,26 +28,45 @@ class ApartmentsController < ApplicationController
     end
   end
 
-  def update
-    
+  def update 
     @apt = Apartment.find(params[:id])
     @apt.update_attributes(params[:apartment])
     @apt.save
 
     redirect_to apartments_path
+  end
 
-  #    @movie = Movie.find(params[:id])
-  #     @movie.update_attributes(params[:movie])
-
-  #   if @movie.update_attributes(params[:movie])
-  #     redirect_to @movie, notice: 'movie was successfully updated.' 
-  #   else
-  #     render "edit"
-  #   end
-  # end
+  def show
 
   end
 
+  def destroy
+    #dis not working
+
+    @apt = Apartment.find(params[:id])
+    @apt.destroy
+
+    redirect_to apartments_path
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
