@@ -7,8 +7,8 @@ gem 'rails', '3.2.16'
 
 gem 'pg'
 
-gem 'pry'
-gem 'pry-rails'
+# gem 'pry'
+# gem 'pry-rails'
 
 gem 'rspec'
 gem 'capybara'
@@ -21,8 +21,8 @@ gem 'devise'
 
 gem 'better_errors'
 
-require 'rubygems'
-require 'rillow'
+# require 'rubygems'
+# require 'rillow'
 
 
 # Gems used only for assets and not required
@@ -35,9 +35,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-end
 
 gem 'jquery-rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
