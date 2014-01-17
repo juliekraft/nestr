@@ -4,7 +4,7 @@ An apartment search tool that allows users to update a database of apartments in
 
 [Nestr](http://vast-harbor-6017.herokuapp.com/)
 ***
-<img src="https://www.dropbox.com/s/rptakd5lapyh2q7/Screenshot%202014-01-17%2009.28.28.png" style="height: 200px; padding:30px;">
+<img src="https://photos-3.dropbox.com/t/0/AADYFWDuvvHMgeIl_5eUjQ2VwjqX6AgjZYYq3L4M99vwNQ/12/67497058/png/1024x768/3/1389974400/0/2/Screenshot%202014-01-17%2009.28.28.png/hhKBpW2esMimdbqK3LLY7mmK3jsx0mjSQmjgOy-cgI4" style="height: 200px; padding:30px;">
 
 
 ###APIs and Gems Used
