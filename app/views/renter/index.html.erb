@@ -1,6 +1,6 @@
 <h1>Hello Renter</h1>
 <% if current_user %>
   <% current_user.favorites.each do |favorite| %>
-    <p><%= favorite.apartment.street %> | <%= link_to "View", "/apartments/#{favorite.apartment.id}" %> | <%= link_to "Unfavorite", "/renter/unfavorite/#{favorite.apartment.id}" %> </p>
+    <p><%= favorite.apartment.street %> | <%= link_to "View", "/apartments/#{favorite.apartment.id }"  %> | <%= link_to "Unfavorite", "/renter/unfavorite/#{favorite.apartment.id}" %> </p>
     <% end %>
 <% end %>

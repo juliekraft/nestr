@@ -21,8 +21,9 @@ gem 'devise'
 
 gem 'better_errors'
 
-# require 'rubygems'
-# require 'rillow'
+gem 'rillow'
+
+gem 'binding_of_caller'
 
 
 # Gems used only for assets and not required
