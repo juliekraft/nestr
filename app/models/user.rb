@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :is_a_broker, :name
 
 
+  has_many :favorites
+  has_many :apartments, through: :favorites
 
 end
 

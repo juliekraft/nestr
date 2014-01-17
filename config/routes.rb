@@ -4,11 +4,15 @@ Nestr::Application.routes.draw do
 
   root to: "users#index"
 
-  get '/broker/index' => "broker#index"
+  get '/broker/index' => "users#index", as: :broker_home
 
-  get '/renter/index' => "renter#index", as: :renter_home
+  get '/renter/index' => "users#index", as: :renter_home
 
   get "/apartments" => "apartments#index"
+
+  get "/renter/favorites/:apartment_id" => "users#add_favorite"
+
+  get "renter/unfavorite/:apartment_id/" => "users#unfavorite"
 
   resources :apartments
 

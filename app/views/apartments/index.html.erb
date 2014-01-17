@@ -17,11 +17,11 @@
     <img src="<%= apt.photo %>" style="width: 200px; height: 200px"/>
 
     <!-- Renters can submit an application to put "Application Pending" on  -->
-    <% if current_user && current_user.is_a_broker == false %>
+    <% if current_user && current_user.is_a_broker == false %> <br/>
 
       <%= link_to "Submit an Application" %> <br/>
 
-      <%= link_to "Favorite" %>
+      <%= link_to "Favorite", "/renter/favorites/#{apt.id}" %>
 
     <% end %>
 
